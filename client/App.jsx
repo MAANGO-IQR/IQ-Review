@@ -1,12 +1,13 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { Routes, Route } from 'react-router';
+import LoginPage from './pages/LoginPage';
 
 function App() {
-
   return (
-    <div>
-        <h1>Hello World</h1>
-    </div>
+      <Routes>
+        <Route path='/' element={<LoginPage />} />
+        <Route path='/login' element={<LoginPage />} />
+      </Routes>
     );
 }
 export default App;

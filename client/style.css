@@ -1,0 +1,13 @@
+/* *********************** 
+MARGIN, LAYOUT, PADDING
+************************  */
+
+/* FLEXBOX */
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.border {
+    border: 2px solid blue;
+}

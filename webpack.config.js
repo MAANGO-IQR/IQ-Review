@@ -34,7 +34,10 @@ module.exports = {
             },
         ],
     },
-    plugins: [htmlWebpackPluginConfig],
+    plugins: [
+      htmlWebpackPluginConfig
+    ],
+    watch: true,
     resolve: {
         extensions: ['.js', '.jsx']
     },
