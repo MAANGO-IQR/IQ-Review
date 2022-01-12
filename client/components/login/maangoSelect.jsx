@@ -8,7 +8,7 @@ let companyList =  companies.map((company) => {
 
 function MangoSelect(){
     return(
-        <>
+      <>
         <div className='maangoSelect'>
         <h1 >Select Company: </h1> 
             <select> 
