@@ -1,0 +1,28 @@
+const express = require('express');
+const questionController = require('../controllers/questionController.js');
+
+const router = express.Router();
+
+//GET request to /questions?&user=1
+router.get('/', questionController.getQuestions, (req, res) => {
+  res
+    .set('Content-Type', 'application/json')
+    .status(200)
+    .json({ questionsList: res.locals.questionsList });
+});
+
+//POST request to /questions?user=1
+//responds with question that was created
+router.post('/', questionController.postQuestion, (req, res) => {
+  // return res.json({ compliment: res.locals.compliment });
+});
+
+router.patch('/', questionController.updateQuestion, (req, res) => {
+  res.json({ question: res.locals.question });
+});
+
+router.delete('/', questionController.deleteQuestion, (req, res) => {
+  res.status(200).send({ message: 'question deleted' });
+});
+
+module.exports = router;
