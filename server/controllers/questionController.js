@@ -67,14 +67,13 @@ questionController.postQuestion = async (req, res, next) => {
     
     const initialPostCount = 1;
 
-    
+
     // const queryString = `
     // INSERT INTO questions (content, category, difficulty, userid, companyname, occurrences) 
     // VALUES (${content}, ${category}, ${difficulty}, ${userid}, ${companyname}, ${initialPostCount})`;
 
     const queryString = `INSERT INTO questions (content, category, difficulty, userid, companyname, occurrences)
-    VALUES ($1, $2, $3, $4, $5, $6) 
-    RETURNING *`;
+    VALUES ($1, $2, $3, $4, $5, $6) RETURNING *`;
 
     // needed to send info into the db.query inside the try
     const values = [content, category, difficulty, userid, companyname, initialPostCount]
