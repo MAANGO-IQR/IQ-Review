@@ -1,16 +1,15 @@
 // Form to log user in
 // Two inputs: Email & password
 import React from 'react';
-
 function LoginForm () {
     return (
-        <div className='flex-column'>
-            <form autoComplete='false'>
-                <input type='email' placeholder='Email'></input>
-                <input type='password' placeholder='Password'></input>
+        <div>
+            <form autoComplete='false' className='flex-column'>
+                <input type='email' placeholder='Email' className='padding-sm padding-left-sm mb-sm'></input>
+                <input type='password' placeholder='Password' className='padding-sm padding-left-sm mb-sm'></input>
             </form>
 
-            <button>Log In</button>
+            <button className='general-button mb-sm'>Log In</button>
         </div>
     )
 }
