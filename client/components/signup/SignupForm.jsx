@@ -1,11 +1,14 @@
 // Form to log user in
-// Two inputs: Email & password
+// 5 inputs: firstName, lastName, username, password, email
 import React from 'react';
 
-function LoginForm () {
+function SigninForm () {
     return (
         <div className='flex-column'>
             <form autoComplete='false'>
+                <input type='text' placeholder='First Name'></input>
+                <input type='text' placeholder='Last Name'></input>
+                <input type='username' placeholder='Username'></input>
                 <input type='email' placeholder='Email'></input>
                 <input type='password' placeholder='Password'></input>
             </form>
@@ -13,4 +16,4 @@ function LoginForm () {
     )
 }
 
-export default LoginForm;
+export default SigninForm;
