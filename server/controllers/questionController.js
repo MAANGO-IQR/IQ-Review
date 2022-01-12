@@ -65,8 +65,6 @@ questionController.postQuestion = async (req, res, next) => {
     // do we have to initialize in the database to 1?
     const { content, category, difficulty, companyname, userid  } = req.body;
 
-    
-
     try {
         
     } catch (error) {

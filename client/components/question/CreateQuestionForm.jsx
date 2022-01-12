@@ -18,7 +18,7 @@ function CreateQuestionForm() {
         const categoryEl = document.getElementById('category');
         const difficultyEl = document.getElementById('difficulty');
         const companyEl = document.getElementById('company');
-
+        console.log('Question Submitted')
         // Options for POST request to /questions
         const optionsObject = {
             method: 'POST', 
@@ -39,8 +39,6 @@ function CreateQuestionForm() {
             .then(data => data.json())
             .then(response => {
                 console.log('POST success from frontend')
-                // Some successful response logic here
-                // Redirect to dashboard?
             })
             .catch(err => {
                 console.log('POST /question error - client: ' + err)
