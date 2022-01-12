@@ -69,6 +69,10 @@ h1{
     margin-bottom: 10px;
 }
 
+.mt-sm {
+    margin-top: 10px;
+}
+
 .mt-50px {
     margin-top: 50px;
 }
@@ -110,6 +114,15 @@ BUTTONS, LINKS, ICONS
     border-radius: 3px;
     color: white;
     background-color: blue;
+    cursor: pointer;
+}
+
+.gray-button {
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    color: black;
+    background-color: darkgray;
     cursor: pointer;
 }
 
