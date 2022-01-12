@@ -8,7 +8,7 @@ let category=  categories.map((currCat) => {
 function CategorySelect(){
     return(
         <div className='CatSelect'>
-        <h1 >Select Category: </h1> 
+        <h2 >Select Category: </h2> 
             <select> 
                 {category}
             </select>

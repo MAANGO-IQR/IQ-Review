@@ -10,7 +10,7 @@ function DifficultySelect(){
    
         
         <div className='diffSelect'>
-           <h1 >Select Difficulty: </h1> 
+           <h2 >Select Difficulty: </h2> 
             <select> 
                 {difficulty}
             </select>
