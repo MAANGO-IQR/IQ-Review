@@ -14,7 +14,7 @@ router.get('/', questionController.getQuestions, (req, res) => {
 //POST request to /questions?user=1
 //responds with question that was created
 router.post('/', questionController.postQuestion, (req, res) => {
-  // return res.json({ compliment: res.locals.compliment });
+  // return res.json({ question: res.locals.question });
 });
 
 router.patch('/', questionController.updateQuestion, (req, res) => {
