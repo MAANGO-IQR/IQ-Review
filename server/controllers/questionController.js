@@ -3,37 +3,37 @@ const db = require('../models/dbModel.js');
 const questionController = {};
 
 questionController.getQuestions = async (req, res, next) => {
-    const { company, category, difficulty } = req.body;
-    const { questionid } = req.query;
+    const { companyname, category, difficulty } = req.body;
+    // const { questionid } = req.query;
     let queryString = null;
     
     // do we want to implement the option to search by each field and all fields?
     // ^^ need a search button then as well as different endpoints
     // the most verbose way to do this is below
 
-    if (company && category && difficulty) {
+    if (companyname && category && difficulty) {
         queryString = `SELECT * FROM questions 
-        WHERE company=${company} 
+        WHERE companyname=${companyname} 
         AND category=${category} 
         AND difficulty=${difficulty}`;
     } 
-    else if (company && category) { //!difficulty
+    else if (companyname && category) { //!difficulty
         queryString = `SELECT * FROM questions 
         WHERE category=${category} 
-        AND company=${company}`;
+        AND companyname=${companyname}`;
     }
-    else if(company && difficulty){
+    else if(companyname && difficulty){
         queryString = `SELECT * FROM questions 
-        WHERE ompany=${company} 
+        WHERE companyname=${companyname} 
         AND difficulty=${difficulty}`;
     } 
     else if (category && difficulty) {
         queryString = `SELECT * FROM questions 
         WHERE difficulty=${difficulty} AND category=${category}`;
     } 
-    else if (company) {
+    else if (companyname) {
         queryString = `SELECT * FROM questions 
-        WHERE company=${company}`;
+        WHERE companyname=${companyname}`;
     } 
     else if (category) {
         queryString = `SELECT * FROM questions 
@@ -53,7 +53,7 @@ questionController.getQuestions = async (req, res, next) => {
         return next();
     } catch (error) {
         next({
-            log: `Database query to retrieve messages ended in ${error}`,
+            log: `Error in get questions controller ended in ${error}`,
             status: 500,
             message: { error: error },
         });
@@ -63,46 +63,64 @@ questionController.getQuestions = async (req, res, next) => {
 questionController.postQuestion = async (req, res, next) => {
     // what do we do with occurrences if we just want it to be initially assigned by 1 for a post?
     // do we have to initialize in the database to 1?
-    const { content, category, difficulty, companyname, userid  } = req.body;
+    const { content, category, difficulty, userid, companyname } = req.body;
+    
+    const initialPostCount = 1;
+
+    
+    // const queryString = `
+    // INSERT INTO questions (content, category, difficulty, userid, companyname, occurrences) 
+    // VALUES (${content}, ${category}, ${difficulty}, ${userid}, ${companyname}, ${initialPostCount})`;
+
+    const queryString = `INSERT INTO questions (content, category, difficulty, userid, companyname, occurrences)
+    VALUES ($1, $2, $3, $4, $5, $6) 
+    RETURNING *`;
+
+    // needed to send info into the db.query inside the try
+    const values = [content, category, difficulty, userid, companyname, initialPostCount]
+
+    console.log(queryString);
 
     try {
-        
-    } catch (error) {
+        const createQuestionPost = await db.query(queryString, values);
+        // console.log(createQuestionPost.rows)
+        res.locals.postQuestion = createQuestionPost.rows[0];
+        // console.log(res.locals.postQuestion)
+        next();
+    } 
+    catch (error) {
         next({
-            log: `Database query to retrieve messages ended in ${error}`,
+            log: `Error in post question controller ended in ${error}`,
             status: 500,
             message: { error: error },
         });
     }
-
-    const queryString = `
-    INSERT INTO questions (content, category, difficulty, userid, companyid)
-    VALUES ($1, $2, $3, $4, $5)`
 }
 
 questionController.updateQuestion = async(req, res, next) => {
-    
+    // occurrences will have to be on req within this controller
 }
 
 questionController.deleteQuestion = async (req, res, next) => {
-    // do we need to have the client send the server some information (on the req.body) to identify what question is to be deleted?
+    // do we need to have the client send the server some information (on the req.body) to identify what question is to be deleted? 
+        // --> using the params to get information on the URL instead
     // also do we need to authenticate the user to delete a question?
     const { questionid, userid } = req.params;
 
     const queryString = `DELETE FROM questions WHERE ${questionid} AND ${userid}`;
 
-    console.log('Is delete working yet')
-    console.log(queryString);
+    // console.log('Is delete working yet')
+    // console.log(queryString);
     
     try {
         const deleted = await db.query(queryString);
     } catch (error) {
         return next({
+            log: `Error in delete question controller ended in ${error}`,
             status: 500,
-            message: `questionController.deleteQuestion error: ${error}`,
+            message: { error: error },
         });
     }
-
     return next();
 };
 
