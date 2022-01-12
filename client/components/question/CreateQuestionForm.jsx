@@ -12,14 +12,47 @@
 import React from 'react';
 
 function CreateQuestionForm() {
+    // Submit a question to the database 
+    function submitQuestion() {
+        const contentEl = document.getElementById('content');
+        const categoryEl = document.getElementById('category');
+        const difficultyEl = document.getElementById('difficulty');
+        const companyEl = document.getElementById('company');
+        console.log('Question Submitted')
+        // Options for POST request to /questions
+        const optionsObject = {
+            method: 'POST', 
+            headers: {
+                'Content-Type': 'application/json'
+            }, 
+            body: JSON.stringify({
+                content: contentEl.value, 
+                category: categoryEl.value, 
+                difficulty: difficultyEl.value, 
+                companyname: companyEl.value,
+                userid: 1
+            })
+        }
+
+        // POST request to /questions 
+        fetch ('/questions', optionsObject)
+            .then(data => data.json())
+            .then(response => {
+                console.log('POST success from frontend')
+            })
+            .catch(err => {
+                console.log('POST /question error - client: ' + err)
+            })
+    }
+
     return (
         <div>
             <form autoComplete="false" id="createForm">
                 <h2>Enter Question</h2>
-                <textarea placeholder='Enter Question'></textarea>
+                <textarea placeholder='Enter Question' id='content' className='width-100'></textarea>
                 
                 {/* Dropdown for category */}
-                <label for="category">Category</label>
+                <label htmlFor="category">Category</label>
                 <select name="category" id="category" form="createForm">
                     <option value="algorithm">Algorithm</option>
                     <option value="sd">Systems Design</option>
@@ -28,7 +61,7 @@ function CreateQuestionForm() {
                 </select>
 
                 {/* Dropdown for category */}
-                <label for="difficulty">Difficulty</label>
+                <label htmlFor="difficulty">Difficulty</label>
                 <select name="difficulty" id="difficulty" form="createForm">
                     <option value="easy">Easy</option>
                     <option value="medium">Medium</option>
@@ -36,7 +69,7 @@ function CreateQuestionForm() {
                 </select>
 
                 {/* Dropdown for company */}
-                <label for="company">Company</label>
+                <label htmlFor="company">Company</label>
                 <select name="company" id="company" form="createForm">
                     <option value="meta">Meta/Facebook</option>
                     <option value="amazon">Amazon</option>
@@ -47,7 +80,7 @@ function CreateQuestionForm() {
                 </select>
             </form>
 
-            <button>Submit</button>
+            <button className='mt-sm gray-button' onClick={() => submitQuestion()}>Submit</button>
         </div>
     )
 }
