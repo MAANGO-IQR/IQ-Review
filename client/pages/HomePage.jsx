@@ -24,14 +24,15 @@ function HomePage() {
         <MangoSelect></MangoSelect>
         <DifficultySelect></DifficultySelect>
         <CategorySelect></CategorySelect>
-
-        <Feed list={list}></Feed>
         <button className='general-button' id='fetch-button' onClick={() => fetchAll()}>Load Questions</button>
       </div>
-
-      <div>
-
+      
+   
+      {/* {list && list[0].content} */}
+      <div className="feedContainer">
+        <Feed list={list}></Feed>
       </div>
+      
     </>
   );
 }

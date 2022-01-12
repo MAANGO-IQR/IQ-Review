@@ -10,7 +10,7 @@ function MangoSelect(){
     return(
       <>
         <div className='maangoSelect'>
-        <h1 >Select Company: </h1> 
+        <h2 >Select Company: </h2> 
             <select> 
                 {companyList}
             </select>
