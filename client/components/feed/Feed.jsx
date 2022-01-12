@@ -15,7 +15,7 @@ function Feed(props) {
 
     return (
         <div>
-            <h>Feed</h1>
+            <h1>Feed</h1>
             {questionArray}
         </div>
     );

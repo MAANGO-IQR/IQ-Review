@@ -5,12 +5,13 @@ nav {
     /* padding: 0;
     margin: 0;
     top: 0;*/
+    gap: 1.5vw;
     padding-bottom: 1vh;
     display: flex;
     top: 0;
     align-items: center;
     justify-content: space-evenly;
-   
+   flex-wrap: wrap;
      position: fixed; 
     height: 7vh;
     width: 100vw;
