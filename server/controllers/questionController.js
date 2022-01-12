@@ -107,7 +107,7 @@ questionController.deleteQuestion = async (req, res, next) => {
     // also do we need to authenticate the user to delete a question?
     const { questionid, userid } = req.params;
 
-    const queryString = `DELETE FROM questions WHERE ${questionid} AND ${userid}`;
+    const queryString = `DELETE FROM questions WHERE questionid=${questionid} AND userid=${userid}`;
 
     // console.log('Is delete working yet')
     // console.log(queryString);

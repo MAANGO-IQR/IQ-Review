@@ -25,7 +25,6 @@ function HomePage() {
         <DifficultySelect></DifficultySelect>
         <CategorySelect></CategorySelect>
 
-        {/* {list && list[0].content} */}
         <Feed list={list}></Feed>
         <button className='general-button' id='fetch-button' onClick={() => fetchAll()}>Load Questions</button>
       </div>
