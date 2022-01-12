@@ -63,7 +63,7 @@ questionController.getQuestions = async (req, res, next) => {
 questionController.postQuestion = async (req, res, next) => {
     // what do we do with occurrences if we just want it to be initially assigned by 1 for a post?
     // do we have to initialize in the database to 1?
-    const { content, category, difficulty, userid, companyid } = req.body;
+    const { content, category, difficulty, companyname, userid  } = req.body;
 
     
 
@@ -82,23 +82,26 @@ questionController.postQuestion = async (req, res, next) => {
     VALUES ($1, $2, $3, $4, $5)`
 }
 
-questionController.updateQuestion = async() => {}
+questionController.updateQuestion = async(req, res, next) => {
+    
+}
 
 questionController.deleteQuestion = async (req, res, next) => {
     // do we need to have the client send the server some information (on the req.body) to identify what question is to be deleted?
     // also do we need to authenticate the user to delete a question?
-    const { questionid } = req.body;
+    const { questionid, userid } = req.params;
 
-    const { userid, questionid } = req.query;
-    const queryString = `
-    DELETE question WHERE questionid =${questionid} AND userid = ${userid}`;
+    const queryString = `DELETE FROM questions WHERE ${questionid} AND ${userid}`;
 
+    console.log('Is delete working yet')
+    console.log(queryString);
+    
     try {
         const deleted = await db.query(queryString);
     } catch (error) {
         return next({
-        status: 500,
-        message: `questionController.deleteQuestion error: ${error}`,
+            status: 500,
+            message: `questionController.deleteQuestion error: ${error}`,
         });
     }
 

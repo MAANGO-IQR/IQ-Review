@@ -21,7 +21,7 @@ router.patch('/', questionController.updateQuestion, (req, res) => {
   res.json({ question: res.locals.question });
 });
 
-router.delete('/', questionController.deleteQuestion, (req, res) => {
+router.delete('/:questionid/:userid', questionController.deleteQuestion, (req, res) => {
   res.status(200).send({ message: 'question deleted' });
 });
 
