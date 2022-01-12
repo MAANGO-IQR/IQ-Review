@@ -1,3 +1,11 @@
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.border {
+    border: 2px solid red;
+}
 /* *********************** 
 MARGIN, LAYOUT, PADDING
 ************************  */
@@ -8,6 +16,56 @@ MARGIN, LAYOUT, PADDING
     flex-direction: column;
 }
 
-.border {
-    border: 2px solid blue;
+/* MARGIN  */
+/* Block (Top/Bottom) */
+.mb-sm {
+    margin-bottom: 10px;
+}
+
+.mt-50px {
+    margin-top: 50px;
+}
+
+/* Inline (left/right) */
+.ml-auto {
+    margin-left: auto;
+}
+
+.mr-auto {
+    margin-right: auto;
+}
+
+/* PADDING  */
+.padding-sm {
+    padding: 10px;
+}
+
+/* WIDTH */
+.width-40 {
+    width: 40%;
+}
+
+.width-100 {
+    width: 100%;
+}
+
+.width-400px {
+    width: 400px;
+}
+
+
+/* *********************** 
+BUTTONS, LINKS, ICONS
+************************  */
+.general-button {
+    padding: 10px;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    background-color: blue;
+    cursor: pointer;
+}
+
+.general-link {
+    color: blue;
 }

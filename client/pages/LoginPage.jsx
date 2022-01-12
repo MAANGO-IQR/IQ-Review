@@ -1,14 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import LoginForm from '../components/login/LoginForm';
 
-// Login Page at path: '/login'
+// Login Page displayed at path: '/login'
 function LoginPage () {
     return (
-        <div>
+        <div className='width-400px ml-auto mr-auto mt-50px'>
+            <h2>Log In</h2>
             <LoginForm />
-            <button>Log In</button>
+            <Link to='/signup'>Don't have an account?</Link>
         </div>
     )
 }
 
-export default LoginPage
+export default LoginPage;
