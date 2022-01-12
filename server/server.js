@@ -11,6 +11,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/users', userRoutes);
 app.use('/questions', questionRoutes);
 
+// catch all
+app.get((req, res) => {
+    res.sendStatus(418);
+});
+
 // Global error handling middleware
 app.use((err, req, res, next) => {
   const defaultErr = {

@@ -10,7 +10,7 @@ userController.loginUser = (req, res, next) => {
     if (!username || !password) {
         return next({
             log: 'userController.loginUser error: Username or password was not provided.',
-            status: 400,
+            status: 401,
             message: { err: 'Failed to log in. Username or password not provided.' },
          });
     }
@@ -59,3 +59,5 @@ userController.signupUser = (req, res, next) => {
         
     }
 }
+
+module.exports = userController;

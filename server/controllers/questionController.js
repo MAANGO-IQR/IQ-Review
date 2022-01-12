@@ -42,7 +42,7 @@ questionController.getQuestions = async (req, res, next) => {
     else if (difficulty) {
         queryString = `SELECT * FROM questions 
         WHERE difficulty=${difficulty}`;
-    }
+    } 
     else {
         queryString = `SELECT * FROM questions`;
     }
@@ -63,8 +63,7 @@ questionController.getQuestions = async (req, res, next) => {
 questionController.postQuestion = async (req, res, next) => {
     // what do we do with occurrences if we just want it to be initially assigned by 1 for a post?
     // do we have to initialize in the database to 1?
-    const { content, category, difficulty } = req.body;
-    const { userid, companyid, occurrences } = req.query;
+    const { content, category, difficulty, userid, companyid } = req.body;
 
     
 
@@ -82,6 +81,8 @@ questionController.postQuestion = async (req, res, next) => {
     INSERT INTO questions (content, category, difficulty, userid, companyid)
     VALUES ($1, $2, $3, $4, $5)`
 }
+
+questionController.updateQuestion = async() => {}
 
 questionController.deleteQuestion = async (req, res, next) => {
     // do we need to have the client send the server some information (on the req.body) to identify what question is to be deleted?
