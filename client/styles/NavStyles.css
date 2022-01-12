@@ -1,0 +1,30 @@
+
+nav {
+    background-color: #082032;
+    height: 100%;
+    /* padding: 0;
+    margin: 0;
+    top: 0;*/
+    padding-bottom: 1vh;
+    display: flex;
+    top: 0;
+    align-items: center;
+    justify-content: space-evenly;
+   
+     position: fixed; 
+    height: 7vh;
+    width: 100vw;
+  }
+  .nav-el {
+    color: white;
+    font-family: 'Red Hat Display', sans-serif;
+    font-weight: 800;
+    display: flex;
+    font-size: 2vw;
+  }
+  @media (max-width: 900px) {
+    .nav-el {
+      font-size: large;
+    }
+  }
+  
