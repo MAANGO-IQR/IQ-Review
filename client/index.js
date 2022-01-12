@@ -6,7 +6,9 @@ import './style.css'
 
 render(
     <BrowserRouter>
+    <AppContext.Provider value = {{userid:null, }}>  
         <App/>
+    </AppContext.Provider>
     </BrowserRouter>, 
     document.getElementById('app')
 )
