@@ -76,7 +76,7 @@ questionController.postQuestion = async (req, res, next) => {
     VALUES ($1, $2, $3, $4, $5, $6) RETURNING *`;
 
     // needed to send info into the db.query inside the try
-    const values = [content, category, difficulty, userid, companyname, initialPostCount]
+    const values = [content, category, difficulty, userid, companyname, initialPostCount];
 
     console.log(queryString);
 
@@ -86,7 +86,7 @@ questionController.postQuestion = async (req, res, next) => {
         res.locals.postQuestion = createQuestionPost.rows[0];
         // console.log(res.locals.postQuestion)
         next();
-    } 
+    }
     catch (error) {
         next({
             log: `Error in post question controller ended in ${error}`,
