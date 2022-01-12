@@ -7,7 +7,6 @@ function LoginPage () {
     return (
         <div>
             <LoginForm />
-            <button>Log In</button>
             <Link to='/signup'>Don't have an account?</Link>
         </div>
     )

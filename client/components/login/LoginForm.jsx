@@ -9,6 +9,8 @@ function LoginForm () {
                 <input type='email' placeholder='Email'></input>
                 <input type='password' placeholder='Password'></input>
             </form>
+
+            <button>Log In</button>
         </div>
     )
 }

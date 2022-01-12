@@ -5,7 +5,6 @@ function CreateQuestionPage() {
     return (
         <div>
             <CreateQuestionForm />
-            <button>Submit</button>
         </div>
     )
 }

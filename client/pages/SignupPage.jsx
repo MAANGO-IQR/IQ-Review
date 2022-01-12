@@ -7,7 +7,6 @@ function SignupPage() {
     return (
         <div>
             <SignupForm />
-            <button>Sign Up</button>
             <Link to='/login'>Log In with Existing Account</Link>
         </div>
     )

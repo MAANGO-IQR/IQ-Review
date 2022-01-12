@@ -12,6 +12,8 @@ function SigninForm () {
                 <input type='email' placeholder='Email'></input>
                 <input type='password' placeholder='Password'></input>
             </form>
+
+            <button>Sign Up</button>
         </div>
     )
 }
