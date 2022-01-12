@@ -9,11 +9,14 @@ import CategorySelect from '../components/login/categorySelect';
 
         function HomePage(){
             return(
+            <>
+           
             <div className='homeContainer'>
                <MangoSelect></MangoSelect>
                <DifficultySelect></DifficultySelect>
                <CategorySelect></CategorySelect>
             </div>
+            </>
             )
         }
         export default HomePage;
