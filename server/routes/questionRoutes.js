@@ -14,12 +14,13 @@ router.get('/', questionController.getQuestions, (req, res) => {
 //POST request to /questions?user=1
 //responds with question that was created
 router.post('/', questionController.postQuestion, (req, res) => {
-  // return res.json({ question: res.locals.question });
+  res.json(res.locals.postQuestion);
 });
 
 router.patch('/', questionController.updateQuestion, (req, res) => {
-  res.json({ question: res.locals.question });
+  res.json({ question: res.locals.patchQuestion });
 });
+
 
 router.delete('/:questionid/:userid', questionController.deleteQuestion, (req, res) => {
   res.status(200).send({ message: 'question deleted' });
