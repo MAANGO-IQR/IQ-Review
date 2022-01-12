@@ -6,6 +6,7 @@ const userController = {};
 userController.loginUser = (req, res, next) => {
     const { username, password } = req.body;
 
+    console.log(username, password)
     // If username or password not found
     if (!username || !password) {
         return next({
