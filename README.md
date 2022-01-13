@@ -4,8 +4,8 @@ An Application to help organize technical interview questions, via the question 
 
 ## Acknowledgements
 
- - [Shanon Lee](https://github.com/@shanon98lee)
- - [Nicholaos Sofocelous](https://github.com/@nsofocleous)
+ - [Shanon Lee](https://github.com/shanon98lee)
+ - [Nicholaos Sofocelous](https://github.com/nsofocleous)
  - [Cristian De Los Rios](https://github.com/Cristian-DeLosRios)
  - [Dan Nguyen](https://github.com/Danlordrises)
 
