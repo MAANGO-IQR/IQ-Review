@@ -3,7 +3,7 @@ import CreateQuestionForm from '../components/question/CreateQuestionForm';
 
 function CreateQuestionPage() {
     return (
-        <div>
+        <div className='newQuestionContainer'>
             <CreateQuestionForm />
         </div>
     )
