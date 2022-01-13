@@ -7,7 +7,8 @@ function FeedItem(props) {
             <div>Question: {props.content}</div>
             <div>Category: {props.category}</div>
             <div>Difficulty: {props.difficulty}</div>
-            <div>Company Name: {props.companyname}</div>
+            <div >Company Name: {props.companyname}</div>
+            
         </div>
     );
 }

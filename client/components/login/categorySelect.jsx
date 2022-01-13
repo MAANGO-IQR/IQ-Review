@@ -1,6 +1,6 @@
 import React from 'react';
 
-const  categories = ['Cat1','Cat2','Cat3','Other']
+const  categories = ["Algorithm", "Systems Design", "Product Design",'Other']
 let category=  categories.map((currCat) => {
     return  <option value = {currCat}>{currCat} </option>
 })

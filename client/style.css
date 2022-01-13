@@ -54,7 +54,7 @@ body {
     align-items: center;
     justify-content: center;
     height: auto;
-    width: 100vw;
+    width: 48vw;
     flex-wrap: wrap;
 }
 .newQuestionContainer{
@@ -73,7 +73,7 @@ body {
     align-items: center;
     justify-content: center;
     height: auto;
-    width: 100vw;
+    width: 80vw;
     flex-wrap: wrap;
     margin-top: 7.5vh;
 }
