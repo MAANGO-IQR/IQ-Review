@@ -1,5 +1,7 @@
 import React from "react";
 import FeedItem from "./FeedItem";
+
+
 function Feed(props) {
     // Func to delete a question, triggered in FeedItem
     function deleteQuestion(id) {
