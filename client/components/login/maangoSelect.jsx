@@ -2,8 +2,8 @@ import React from 'react';
 
 const companies = ['Meta','Apple','Amazon','Netflix','Google','Other']
 
-let companyList =  companies.map((company) => {
-    return  <option value = {company}>{company} </option>
+let companyList =  companies.map((company,i) => {
+    return  <option id = {i} value = {company}>{company} </option>
 })
 
 function MangoSelect(){
@@ -11,7 +11,7 @@ function MangoSelect(){
       <>
         <div className='maangoSelect'>
         <h2 >Select Company: </h2> 
-            <select> 
+            <select id="company"> 
                 {companyList}
             </select>
         </div>

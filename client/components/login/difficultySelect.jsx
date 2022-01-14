@@ -2,7 +2,7 @@ import React from 'react';
 
 const  difficulties = ['Easy','Medium','Hard']
 let difficulty=  difficulties.map((currDiff) => {
-    return  <option value = {currDiff}>{currDiff} </option>
+    return  <option  value = {currDiff}>{currDiff} </option>
 })
 
 function DifficultySelect(){
@@ -11,7 +11,7 @@ function DifficultySelect(){
         
         <div className='diffSelect'>
            <h2 >Select Difficulty: </h2> 
-            <select> 
+            <select id="difficulty"> 
                 {difficulty}
             </select>
         </div>

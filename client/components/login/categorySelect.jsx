@@ -9,7 +9,7 @@ function CategorySelect(){
     return(
         <div className='CatSelect'>
         <h2 >Select Category: </h2> 
-            <select> 
+            <select id="category" > 
                 {category}
             </select>
         </div>

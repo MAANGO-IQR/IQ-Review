@@ -10,6 +10,11 @@
     // Users will be able to click whether or not they've seen this question on the dashboard
 
 import React from 'react';
+import CategorySelect from '../login/categorySelect';
+import DifficultySelect from '../login/difficultySelect';
+import MangoSelect from '../login/maangoSelect';
+// import CategorySelect from '../login/categorySelect';
+
 
 function CreateQuestionForm() {
     // Submit a question to the database 
@@ -53,31 +58,34 @@ function CreateQuestionForm() {
                 
                 {/* Dropdown for category */}
                 <label htmlFor="category">Category</label>
-                <select name="category" id="category" form="createForm">
+                {/* <select name="category" id="category" form="createForm">
                     <option value="algorithm">Algorithm</option>
                     <option value="sd">Systems Design</option>
                     <option value="pd">Product Design</option>
                     <option value="other">Other</option>
-                </select>
+                </select> */}
+                <CategorySelect></CategorySelect>
 
                 {/* Dropdown for category */}
                 <label htmlFor="difficulty">Difficulty</label>
-                <select name="difficulty" id="difficulty" form="createForm">
+                {/* <select name="difficulty" id="difficulty" form="createForm">
                     <option value="easy">Easy</option>
                     <option value="medium">Medium</option>
                     <option value="hard">Hard</option>
-                </select>
+                </select> */}
+                <DifficultySelect></DifficultySelect>
 
                 {/* Dropdown for company */}
                 <label htmlFor="company">Company</label>
-                <select name="company" id="company" form="createForm">
+                {/* <select name="company" id="company" form="createForm">
                     <option value="meta">Meta/Facebook</option>
                     <option value="amazon">Amazon</option>
                     <option value="apple">Apple</option>
                     <option value="netflix">Netflix</option>
                     <option value="google">Google</option>
                     <option value="other">Other</option>
-                </select>
+                </select> */}
+                <MangoSelect></MangoSelect>
             </form>
 
             <button className='mt-sm gray-button' onClick={() => submitQuestion()}>Submit</button>
